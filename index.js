@@ -12,7 +12,8 @@ program
 	.version(npm.version)
 	.option('-u, --url <url>', 'url to convert')
 	.option('-c, --config <config>', 'Config file location')
-	.option('-o, --output <output>', 'out mp3 location');
+	.option('-o, --output <output>', 'out mp3 location')
+	.option('-i, --id <id>', 'Name of your projects id ex: myproj-190928');
 
 program.parse(process.argv)
 
@@ -24,7 +25,7 @@ if(!program.url)
 
 	process.exit(-1);
 }
-if(!program.config)
+else if(!program.config)
 {
 	console.info('\n');
 	console.info('\tNo config provided');
@@ -32,10 +33,18 @@ if(!program.config)
 
 	process.exit(-1);
 }
-if(!program.output)
+else if(!program.output)
 {
 	console.info('\n');
 	console.info('\tNo output provided');
+	console.info('\n');
+
+	process.exit(-1);
+}
+else if(!program.id)
+{
+	console.info('\n');
+	console.info('\tNo projectId provided');
 	console.info('\n');
 
 	process.exit(-1);
@@ -48,6 +57,7 @@ function main(){
 	let config = program.config;
 	let article = program.url;
 	let output = program.output;
+	let projectId = program.projectId;
 
 	extract(article)
 	.then(function(article) {
@@ -60,7 +70,7 @@ function main(){
 
 	}).then(function(article) {
 
-		return convert(article);
+		return convert(article, config, projectId);
 
 	}).then(function(article) {
 

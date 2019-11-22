@@ -1,10 +1,10 @@
 const textToSpeech = require('@google-cloud/text-to-speech');
-module.exports = function(article){
+module.exports = function(article, config, projectId){
   console.log("Converting...")
   return new Promise(async(resolve, reject) =>{
     const client = new textToSpeech.TextToSpeechClient({
-      projectId: 'ttsapi-259817',
-      keyFilename: './config.json',
+      projectId: projectId,
+      keyFilename: config,
     });
 
     var audioChunks = [];
