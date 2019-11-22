@@ -1,0 +1,25 @@
+{
+  "name": "article-2-voice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jarmahent/article-2-voice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jarmahent/article-2-voice/issues"
+  },
+  "homepage": "https://github.com/Jarmahent/article-2-voice#readme",
+  "dependencies": {
+    "@google-cloud/text-to-speech": "^2.0.2",
+    "article-parser": "^4.0.5",
+    "commander": "^4.0.1",
+    "striptags": "^3.1.1"
+  }
+}
