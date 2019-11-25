@@ -1,5 +1,5 @@
 {
-  "name": "@jarmahent/article-2-voice",
+  "name": "article-2-voice",
   "version": "0.1.0",
   "description": "Article to voice converter using google text to speech api",
   "main": "index.js",
