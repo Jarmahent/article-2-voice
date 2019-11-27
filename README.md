@@ -21,7 +21,7 @@ Prerequisites:
 Parameters to use when running Article-2-voice
 
 `-u` or `--url` The url of the article you want to convert <br>
-`-c` or `--config` Where the json config file from google when your create your <br>text-to-speech project is
+`-c` or `--config` Where the json config file from google when your create your text-to-speech project is<br>
 `-o` or `--output` where the output mp3 file will go when the article is converted<br>
 `-i` or `--id` the project id from Google API<br>
 
