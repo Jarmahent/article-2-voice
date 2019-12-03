@@ -1,6 +1,6 @@
 {
   "name": "article-2-voice",
-  "version": "0.2.8",
+  "version": "0.3.1",
   "description": "Article to voice converter using google text to speech api",
   "main": "index.js",
   "dependencies": {
