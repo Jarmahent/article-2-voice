@@ -24,12 +24,12 @@ Parameters to use when running Article-2-voice
 `-c` or `--config` Where the json config file from google when your create your text-to-speech project is<br>
 `-o` or `--output` where the output mp3 file will go when the article is converted<br>
 `-i` or `--id` the project id from Google API<br>
+`-m` or `--exportmeta` Export meta data from the article extraction such as title, content, and publish date<br>
 
 ---
 Example of what it should look like in practice:
 
-`a2v -c ./config.json -u "https://www.bleepingcomputer.com/news/security/severe-flaws-in-kubernetes-expose-all-servers-to-dos-attacks/" -o /Users/kevinhernandez/Desktop/out.m
-p3 -i ttsapi-259817`
+`a2v -c ./config.json -u "https://www.bleepingcomputer.com/news/security/severe-flaws-in-kubernetes-expose-all-servers-to-dos-attacks/" -o /Users/kevinhernandez/Desktop -i [project Id here] -m`
 
 Output log:
 ```
@@ -38,4 +38,5 @@ Stripping...
 Chunking...
 Converting...
 Writing...
+Done!
 ```
