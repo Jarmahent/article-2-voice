@@ -1,6 +1,6 @@
 {
   "name": "article-2-voice",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Article to voice converter using google text to speech api",
   "main": "index.js",
   "dependencies": {
@@ -20,6 +20,7 @@
     "type": "git",
     "url": "git+https://github.com/Jarmahent/article-2-voice.git"
   },
+  "keywords": ["article", "converter", "text to speech"],
   "author": "Kevin Hernandez",
   "license": "MIT",
   "bugs": {
