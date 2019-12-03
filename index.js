@@ -15,7 +15,8 @@ program
 	.option('-u, --url <url>', 'url to convert')
 	.option('-c, --config <config>', 'Config file location')
 	.option('-o, --output <output>', 'out mp3 location')
-	.option('-i, --id <id>', 'Name of your projects id ex: myproj-190928');
+  .option('-i, --id <id>', 'Name of your projects id ex: myproj-190928')
+  .option('-m, --exportmeta [exportMeta]', 'Export article meta data');
 
 program.parse(process.argv)
 
@@ -59,12 +60,13 @@ function main(){
 	let config = program.config;
 	let article = program.url;
 	let output = program.output;
-	let projectId = program.projectId;
+  let projectId = program.projectId;
+  let exportMeta = program.exportmeta
 
 	extract(article)
 	.then(function(article) {
 
-		return strip(article);
+		return strip(article, output, exportMeta);
 
 	}).then(function(article) {
 
@@ -77,7 +79,6 @@ function main(){
 	}).then(function(article) {
 
 		return write(article, output);
-
 	})
 	.catch(err =>{
 		console.log("ERR")
