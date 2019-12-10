@@ -4,13 +4,12 @@ const path = require('path')
 
 module.exports = function(article, outDir, exportMeta){
   return new Promise((resolve, reject) =>{
-    tags_strippped = striptags(article.content)
-
     if(exportMeta){
+      let strippedTags = striptags(article.content)
       console.log("Stripping html entities and writing meta data...")
       article_file = {
         "url":article.url,
-        "content":tags_strippped,
+        "content":strippedTags,
         "title":article.title,
         "author":article.author,
         "published":article.published,
@@ -18,13 +17,13 @@ module.exports = function(article, outDir, exportMeta){
       }
   
   
-      fs.writeFile(path.join(outDir, "meta.json"), JSON.stringify(article), (err)=>{
+      fs.writeFile(path.join(outDir, "meta.json"), JSON.stringify(article_file), (err)=>{
         if(err){return reject(err)}
-        return resolve(striptags(tags_strippped))
+        return resolve(strippedTags)
       })
     }else{
       console.log("Stripping...")
-      return resolve(striptags(tags_strippped))
+      return resolve(striptags(article.content))
     }
   });
 }
