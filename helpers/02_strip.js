@@ -10,6 +10,7 @@ module.exports = function(article, outDir, exportMeta){
       article_file = {
         "url":article.url,
         "content":strippedTags,
+        "description": article.description,
         "title":article.title,
         "author":article.author,
         "published":article.published,
