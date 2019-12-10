@@ -13,7 +13,8 @@ module.exports = function(article, outDir, exportMeta){
         "title":article.title,
         "author":article.author,
         "published":article.published,
-        "source": article.source
+        "source": article.source,
+        "image": article.image
       }
   
   
